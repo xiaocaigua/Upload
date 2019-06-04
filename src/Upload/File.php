@@ -218,7 +218,7 @@ class File implements \ArrayAccess, \IteratorAggregate, \Countable
     {
         if (in_array($callbackName, array('beforeValidation', 'afterValidation', 'beforeUpload', 'afterUpload')) === true) {
             if (isset($this->$callbackName) === true) {
-                call_user_func_array($this->$callbackName, array($file));
+                call_user_func_array($this->$callbackName, array($file)); 
             }
         }
     }
