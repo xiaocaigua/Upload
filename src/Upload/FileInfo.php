@@ -28,6 +28,7 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
+
 namespace Upload;
 
 /**
@@ -67,7 +68,7 @@ class FileInfo extends \SplFileInfo implements \Upload\FileInfoInterface
      * Constructor
      *
      * @param string $filePathname Absolute path to uploaded file on disk
-     * @param string $newName      Desired file name (with extension) of uploaded file
+     * @param string $newName Desired file name (with extension) of uploaded file
      */
     public function __construct($filePathname, $newName = null)
     {
@@ -90,10 +91,10 @@ class FileInfo extends \SplFileInfo implements \Upload\FileInfoInterface
 
     /**
      * Set file name (without extension)
-     * 
+     *
      * It also makes sure file name is safe
      *
-     * @param  string           $name
+     * @param  string $name
      * @return \Upload\FileInfo Self
      */
     public function setName($name)
@@ -118,7 +119,7 @@ class FileInfo extends \SplFileInfo implements \Upload\FileInfoInterface
     /**
      * Set file extension (without dot prefix)
      *
-     * @param  string           $extension
+     * @param  string $extension
      * @return \Upload\FileInfo Self
      */
     public function setExtension($extension)
@@ -213,7 +214,8 @@ class FileInfo extends \SplFileInfo implements \Upload\FileInfoInterface
         static::$factory = $callable;
     }
 
-    public static function createFromFactory($tmpName, $name = null) {
+    public static function createFromFactory($tmpName, $name = null)
+    {
         if (isset(static::$factory) === true) {
             $result = call_user_func_array(static::$factory, array($tmpName, $name));
             if ($result instanceof \Upload\FileInfoInterface === false) {
