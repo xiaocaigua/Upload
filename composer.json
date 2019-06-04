@@ -12,6 +12,10 @@
             "homepage": "https://github.com/xiaocaigua/"
         }
     ],
+  "repositories": [{
+    "type": "vcs",
+    "url": "http://github.com/brandonsavage/Upload"
+  }],
     "require": {
         "php": ">=7.1",
         "ext-fileinfo": "*",
